@@ -1,0 +1,92 @@
+header{
+    background-color: gray;
+    color: gary;
+    font-family: roboto;
+    font-size: 16px;
+    height: 56px;
+    width: 100%;
+    position: relative;
+    line-height: normal;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    box-sizing: border-box;
+}
+img{
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+    align-items: center;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+}
+input{
+    min-width: 407px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 743px;
+    height: 40px;
+    background-color: '';
+    border: none;
+    color: #333;
+    margin-left: 76px;
+    border-radius: 10px;
+    border-radius: 10px solid #000000;
+    border-radius: 10px solid #000000;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    padding: 0;
+}
+.fas fa-search{
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    stroke-width: 0;
+    vertical-align: middle;
+    color: #8e8e8e;
+    margin-right: 12px;
+}
+button{
+    font-size: 16px;
+    background-color: grey;
+    color: #333;
+    fill: currentColor;
+    margin-left: 76px;
+    border-radius: 10px solid #000000;
+    border-radius: 10px solid #000000;
+    border-radius: 10px solid #000000;
+    border: 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    letter-spacing: -.4px;
+    font-weight: 600;
+    outline: none;
+    padding: 0;
+}
+/*i{
+    color: #8e8e8e;
+    fill: currentColor;
+    stroke-width: 0;
+    vertical-align: middl;
+    position: absolute;
+    top: 30%;
+    left: 6%;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+}*/
+/*div.button{
+    position: absolute;
+    right: 0%;
+    top: 40%;
+    width: 427px;
+    height: 48px;
+}*/
