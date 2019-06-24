@@ -33,19 +33,28 @@ input{
     background-color: '';
     border: none;
     color: #333;
-    margin-left: 76px;
-    border-radius: 10px;
-    border-radius: 10px solid #000000;
-    border-radius: 10px solid #000000;
+    border-radius: 0px 10px 10px 0px;
     font-size: 16px;
     font-weight: 600;
     outline: none;
-    padding: 0;
+    position: absolute;
+    left: 100px;
 }
-.fas fa-search{
-    width: 20px;
-    height: 20px;
-}
+#search{
+        
+        
+        margin-top: 9px;
+        background: white;
+        border-radius: 6px 0px 0px 6px;
+        font-size: 20px;
+        position: absolute;
+        width: 30px;
+        height: 32px;
+        left: 60px;
+        top: -5px;
+     }
+
+
 
 button{
     font-size: 16px;
@@ -82,6 +91,8 @@ i{
     position: absolute;
     right: 0%;
     top: 40%;
-    width: 427px;
-    height: 48px;
+    display: inline;
+    align-items: center;
+    font-weight: bold;
+
 }

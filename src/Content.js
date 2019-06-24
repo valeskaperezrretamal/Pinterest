@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { async } from 'q';
 import Images from './Images';
 import {accesKey,endPoint} from './Unplash';
+import ReactDOM from 'react-dom';
+
 
 
 class Content extends Component{
@@ -10,26 +12,36 @@ class Content extends Component{
         this.state = {
             images:{
                 author: '',
-                fileName:'',
+                description:'',
                 id: '',
             }
         }
+        
+        
     }
     
-
+   
    
     render(){
+        const Attributes = 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-goose.jpg';
+      
         return(
             <div>
+
                 <body>
-            <Images images={{...this.state.images}}/>
-            </body>
+                    <img src={Attributes}/>;
+            
+                </body>
+                
             </div>
+            
         );
+       
     }
 }
 
 
+//<Images images={{...this.state.images}}/>
  //const result = await fetch ();
             //const data = await result.jason();
             //console.log(data);

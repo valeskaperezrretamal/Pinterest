@@ -46,30 +46,31 @@ class Above extends Component {
           <img src={pinterest}  alt="logo" />
         </div>
         <div>
+          <span><i class="fas fa-search" id="search"></i></span>
+        
+        
           <input  ref = {this.inputValue} type="text" placeholder="Buscar" onChange={this.setinput} value={this.state.input}/>
-        </div>
-        <div>
-          <button ><i class="fas fa-search"></i></button>
-        </div>
+          </div>
+      
         
         <div className="div-buttons">
           
-              <button>Inicio</button>
+              <span>Inicio</span>
           
           
-              <button>Siguiendo</button>
+              <span>Siguiendo</span>
           
         
-              <button>Valeska</button>
+              <span>Valeska</span>
               
               
-              <button><i class="fas fa-comment-dots"></i></button>
+              <span><i class="fas fa-comment-dots"></i></span>
             
               
-              <button><i class="fas fa-bell"></i></button>
+              <span><i class="fas fa-bell"></i></span>
               
               
-              <button><i class="fas fa-ellipsis-h"></i></button>
+              <span><i class="fas fa-ellipsis-h"></i></span>
         
         </div>
       </header>
