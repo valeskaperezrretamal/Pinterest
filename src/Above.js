@@ -6,8 +6,35 @@ import './styles/StyleAbove.css';
 class Above extends Component {
   constructor(props){
     super(props);
+    this.state={input: ''}
+    this.inputValue = React.createRef();
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.setinput=this.setinput.bind(this);
 
   }
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
+  }
+//se ejecuta cuando se presiona enter
+  handleEnter() {
+    
+    this.props.Search(this.state.input);
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+//agrega el valor del input al state
+  setinput= ()=>{
+    this.setState({
+      input: this.inputValue.value
+    })
+   }
 
 
   render(){
@@ -19,13 +46,13 @@ class Above extends Component {
           <img src={pinterest}  alt="logo" />
         </div>
         <div>
-          <input  type="text" placeholder="Buscar"/>
+          <input  ref = {this.inputValue} type="text" placeholder="Buscar" onChange={this.setinput} value={this.state.input}/>
         </div>
         <div>
-          <button onClick={this.sampleImg}><i class="fas fa-search"></i></button>
+          <button ><i class="fas fa-search"></i></button>
         </div>
         
-        <div>
+        <div className="div-buttons">
           
               <button>Inicio</button>
           
@@ -33,16 +60,16 @@ class Above extends Component {
               <button>Siguiendo</button>
           
         
-        <button>Valeska</button>
-        
-        
-        <button><i class="fas fa-comment-dots"></i></button>
-       
-        
-        <button><i class="fas fa-bell"></i></button>
-        
-        
-        <button><i class="fas fa-ellipsis-h"></i></button>
+              <button>Valeska</button>
+              
+              
+              <button><i class="fas fa-comment-dots"></i></button>
+            
+              
+              <button><i class="fas fa-bell"></i></button>
+              
+              
+              <button><i class="fas fa-ellipsis-h"></i></button>
         
         </div>
       </header>
