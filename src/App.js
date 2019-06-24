@@ -49,7 +49,7 @@ class App extends Component {
   //función que se llama desde input (componente above)
   Search=(query)=>{
     this.setState((state, props)=>{
-      return {...this.state, query: query, pages: '1'};
+      return {...this.state, query: query, page: '1'};
 
     })
 
