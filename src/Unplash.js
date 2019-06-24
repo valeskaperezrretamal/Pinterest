@@ -1,5 +1,5 @@
 //datos para consumir api unplash
-const accesKey = de2c8549a0426ab60764fa0cff20176be65648868023e2f1ec315ba2d4e76338;
+const accesKey = 'de2c8549a0426ab60764fa0cff20176be65648868023e2f1ec315ba2d4e76338';
 const endPoint = 'https://api.unsplash.com/search/photos';
 
 //función para consumir api unplash, query es la palabra que se va a buscar
