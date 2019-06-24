@@ -45,12 +45,8 @@ input{
 .fas fa-search{
     width: 20px;
     height: 20px;
-    fill: currentColor;
-    stroke-width: 0;
-    vertical-align: middle;
-    color: #8e8e8e;
-    margin-right: 12px;
 }
+
 button{
     font-size: 16px;
     background-color: grey;
@@ -71,7 +67,7 @@ button{
     outline: none;
     padding: 0;
 }
-/*i{
+i{
     color: #8e8e8e;
     fill: currentColor;
     stroke-width: 0;
@@ -82,7 +78,7 @@ button{
     width: 20px;
     height: 20px;
     padding: 5px;
-}*/
+}
 /*div.button{
     position: absolute;
     right: 0%;
