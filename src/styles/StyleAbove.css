@@ -73,16 +73,15 @@ i{
     stroke-width: 0;
     vertical-align: middl;
     position: absolute;
-    top: 30%;
-    left: 6%;
+    
     width: 20px;
     height: 20px;
     padding: 5px;
 }
-/*div.button{
+.div-buttons{
     position: absolute;
     right: 0%;
     top: 40%;
     width: 427px;
     height: 48px;
-}*/
+}
