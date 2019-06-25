@@ -12,17 +12,23 @@ header{
     padding-bottom: 4px;
     padding-top: 4px;
     box-sizing: border-box;
+    margin-bottom: 24px;
 }
 #logo-pin{
-    padding-bottom: 4px;
-    padding-top: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     box-sizing: border-box;
     align-items: center;
     position: absolute;
     width: 44px;
     height: 44px;
+    border-radius: 100%;
+}
+#logo-pin:hover{
+    background: #e2e2e2;
+
 }
 input{
     min-width: 407px;
@@ -30,27 +36,29 @@ input{
     padding-right: 16px;
     width: 743px;
     height: 40px;
-    background-color: rgba(189, 183, 183, 0.425);
+    background-color: #F2F2F2;
     border: none;
-    color: #333;
+    color: #979797;
     border-radius: 0px 10px 10px 0px;
     font-size: 16px;
     font-weight: 600;
     outline: none;
     position: absolute;
     left: 100px;
-}
+    }
 #search{
         
     margin-top: 9px;
-    background: rgba(189, 183, 183, 0.425);
+    background-color: #F2F2F2;
+    color: #979797;
     border-radius: 6px 0px 0px 6px;
     font-size: 20px;
     position: absolute;
     width: 30px;
-    height: 30px;
+    height: 32px;
     left: 60px;
     top: -5px;
+    
 }
 
 
