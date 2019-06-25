@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import pinterest from './img/pinterest.png'
 import './styles/StyleAbove.css';
+import './styles/StyleContent.css';
 
 
 class Above extends Component {
@@ -54,23 +55,26 @@ class Above extends Component {
       
         
         <div className="div-buttons">
+
+          <div id="icon-text">
+              <span id="icon-text-start">Inicio</span>
           
-              <span>Inicio</span>
           
-          
-              <span>Siguiendo</span>
+              <span id="icon-text-following">Siguiendo</span>
           
         
-              <span>Valeska</span>
+              <span id="icon-text-vale">Valeska</span>
+              </div>
               
-              
-              <span><i className="fas fa-comment-dots"></i></span>
+              <div id="icon-figure">
+              <span><i className="fas fa-comment-dots" id="icon-figure-dots"></i></span>
             
               
-              <span><i className="fas fa-bell"></i></span>
+              <span><i className="fas fa-bell" id="icon-figure-bell"></i></span>
               
               
-              <span><i className="fas fa-ellipsis-h"></i></span>
+              <span><i className="fas fa-ellipsis-h" id="icon-figure-h"></i></span>
+              </div>
         
         </div>
       </header>
