@@ -1,5 +1,5 @@
 header{
-    background-color: gray;
+    background-color: white;
     color: gary;
     font-family: roboto;
     font-size: 16px;
@@ -13,7 +13,7 @@ header{
     padding-top: 4px;
     box-sizing: border-box;
 }
-img{
+#logo-pin{
     padding-bottom: 4px;
     padding-top: 4px;
     padding-left: 4px;
@@ -21,8 +21,8 @@ img{
     box-sizing: border-box;
     align-items: center;
     position: absolute;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
 }
 input{
     min-width: 407px;
@@ -30,7 +30,7 @@ input{
     padding-right: 16px;
     width: 743px;
     height: 40px;
-    background-color: '';
+    background-color: rgba(189, 183, 183, 0.425);
     border: none;
     color: #333;
     border-radius: 0px 10px 10px 0px;
@@ -42,41 +42,21 @@ input{
 }
 #search{
         
-        
-        margin-top: 9px;
-        background: white;
-        border-radius: 6px 0px 0px 6px;
-        font-size: 20px;
-        position: absolute;
-        width: 30px;
-        height: 32px;
-        left: 60px;
-        top: -5px;
-     }
-
-
-
-button{
-    font-size: 16px;
-    background-color: grey;
-    color: #333;
-    fill: currentColor;
-    margin-left: 76px;
-    border-radius: 10px solid #000000;
-    border-radius: 10px solid #000000;
-    border-radius: 10px solid #000000;
-    border: 1px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    box-sizing: border-box;
-    letter-spacing: -.4px;
-    font-weight: 600;
-    outline: none;
-    padding: 0;
+    margin-top: 9px;
+    background: rgba(189, 183, 183, 0.425);
+    border-radius: 6px 0px 0px 6px;
+    font-size: 20px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 60px;
+    top: -5px;
 }
+
+
+
 i{
+    
     color: #8e8e8e;
     fill: currentColor;
     stroke-width: 0;
@@ -87,12 +67,17 @@ i{
     height: 20px;
     padding: 5px;
 }
+    
+    
 .div-buttons{
-    position: absolute;
+    
     right: 0%;
     top: 40%;
     display: inline;
     align-items: center;
     font-weight: bold;
+    text-align: right;
+ 
+    position: absolute;
 
 }

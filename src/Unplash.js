@@ -4,31 +4,26 @@ const endPoint = 'https://api.unsplash.com/search/photos';
 
 //función para consumir api unplash, query es la palabra que se va a buscar
 // page es la pagina que se quiere recibir desde la api
-export const GetImgs = (query,page)=>{
-    const fetch = async ()=>{
+export const GetImgs = async (query,page)=>{
         try{
-            let response = await fetch(endPoint + '?query=' + query + 
-            '&client_id=' + accesKey + '&per_page=20' + '&page=' + page);
+            let response = await fetch(`${endPoint}?query=${query}&client_id=${accesKey}&per_page=20&page=${page}`);
+            console.log(response);
             let jsonResponse = await response.json();
+            console.log(jsonResponse);
             let imagesList = await jsonResponse.results; 
             let output = {query: query, page: page, images: []};      
-            imagesList.map((element)=>{
+            await imagesList.map((element)=>{
                 output.images.push({
                     description: element.description,
                     id: element.id,
                     regular: element.urls.regular,
                     thumb: element.urls.thumb
-                })
+                });            
+            });
+            console.log(output);
             return output;
-            })
             }
             catch (error){
-                console.log('Error',error)
-
-        }
-    
-
-       
-    }
-    return fetch();
+                console.log('Error',error);
+        }      
 }

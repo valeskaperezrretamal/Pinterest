@@ -32,7 +32,7 @@ class Above extends Component {
 //agrega el valor del input al state
   setinput= ()=>{
     this.setState({
-      input: this.inputValue.value
+      input: this.inputValue.current.value
     })
    }
 
@@ -43,13 +43,13 @@ class Above extends Component {
       <header>
           
         <div>
-          <img src={pinterest}  alt="logo" />
+          <img id="logo-pin"src={pinterest}  alt="logo" />
         </div>
         <div>
-          <span><i class="fas fa-search" id="search"></i></span>
+          <span><i className="fas fa-search" id="search"></i></span>
         
         
-          <input  ref = {this.inputValue} type="text" placeholder="Buscar" onChange={this.setinput} value={this.state.input}/>
+          <input  ref = {this.inputValue} type="text" placeholder="Buscar" onChange={this.setinput}/>
           </div>
       
         
@@ -64,13 +64,13 @@ class Above extends Component {
               <span>Valeska</span>
               
               
-              <span><i class="fas fa-comment-dots"></i></span>
+              <span><i className="fas fa-comment-dots"></i></span>
             
               
-              <span><i class="fas fa-bell"></i></span>
+              <span><i className="fas fa-bell"></i></span>
               
               
-              <span><i class="fas fa-ellipsis-h"></i></span>
+              <span><i className="fas fa-ellipsis-h"></i></span>
         
         </div>
       </header>
@@ -83,3 +83,5 @@ class Above extends Component {
   
   export default Above;
   
+
+ 

@@ -4,56 +4,58 @@ import Content from './Content.js';
 import {GetImgs} from './Unplash.js';
 
 
+
 class App extends Component {
   constructor(props){
     super(props);
+    
     this.state = {
       images: [],
-      query: '',
+      query: 'perros',
       page: '1',
         }
+       
   }
   
-
- 
-
   render(){ 
   return (
     <div className="App">
       <Above Search = {this.Search} />
-      <Content/>
+      <Content images= {this.state}/>
     </div>
   );
   }
 //función para cambiar el estado
-  RefreshImgs =()=>{
+  RefreshImgs =async ()=>{
     //para busquedas nuevas
-    if (this.state.page === '1'){
-      this.setState((state,props)=>{
-        return GetImgs(state.query, state.page);
-      })
-    }
-    //para scrolls.
-    else {
-      this.setState((state, props)=>{
-        let Add = GetImgs(state.query, state.page);
-        return {...this.state,
-        page: Add.page,
-        query: Add.query,   
-        images: this.state.images.concat(Add.images)}
+    try{
+      if (this.state.page === '1'){
+        GetImgs(this.state.query, this.state.page).then(
+          newstate=>{
+            this.setState(newstate);
+          })
+      }
+      //para scrolls.
+      else {
+        this.setState(async (state, props)=>{
+          let Add = await GetImgs(state.query, state.page);
+          return {...state,
+          page: Add.page,
+          query: Add.query,   
+          images: state.images.concat(Add.images)}
 
-    })}
-    
-    
+      })}
+    }
+    catch (error){
+      console.log('Error',error);
+    }     
   }
   //función que se llama desde input (componente above)
   Search=(query)=>{
     this.setState((state, props)=>{
-      return {...this.state, query: query, page: '1'};
-
-    })
-
-
+      return {...state, query: query, page: '1'};
+    }); 
+    this.RefreshImgs();
   }
 }
 
