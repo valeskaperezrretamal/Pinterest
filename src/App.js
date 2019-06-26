@@ -16,7 +16,9 @@ class App extends Component {
         }
        
   }
-  
+  componentDidMount= ()=>{
+    this.RefreshImgs();
+  }
   render(){ 
   return (
     <div className="App">

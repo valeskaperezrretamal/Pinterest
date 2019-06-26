@@ -9,7 +9,7 @@ class Content extends Component {
 
     images=()=>{
         return this.props.images.images.map(element => {
-            return <img id="thumb" src={element.thumb} />
+            return <img id="thumb" src={element.thumb} /> 
         })
     }
     render(){
