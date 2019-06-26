@@ -14,8 +14,10 @@ class App extends Component {
       query: 'perros',
       page: '1',
         }
-       
-  }
+      }
+      componentDidMount= ()=>{
+        this.RefreshImgs();
+      }
   
   render(){ 
   return (
