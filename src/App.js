@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Above from './Above.js';
 import Content from './Content.js';
 import {GetImgs} from './Unplash.js';
+import images from './Images.js';
 
 
 
@@ -16,14 +17,18 @@ class App extends Component {
         }
        
   }
+  //al iniciar o referescar muestra las 20 fotos
   componentDidMount= ()=>{
     this.RefreshImgs();
   }
+  //para hacer scroll y que carge 20 fotos
+  
   render(){ 
   return (
     <div className="App">
       <Above Search = {this.Search} />
       <Content images= {this.state}/>
+      <Images/>
     </div>
   );
   }
