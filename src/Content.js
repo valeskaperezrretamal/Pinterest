@@ -1,24 +1,55 @@
 import React,{Component} from 'react';
+import ReactDOM from 'react-dom';
+import StyleFlex from './styles/StyleFlex.css';
+import { watchFile } from 'fs';
 
 
 class Content extends Component {
     constructor(props){
         super(props);
+        this.divContent = React.createRef();
+        this.loading=false;
         
-    }
+	}
+    
+	componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+	};
+
+	componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+	};
+    handleScroll = e => {
+       /*  console.log("scrollY: "+window.scrollY);
+        console.log("offsetHeight: "+ this.divContent.current.offsetHeight);
+        console.log("innerHeight: "+ window.innerHeight); */
+        /* console.log(this.divContent.current.offsetHeight - window.scrollY - window.innerHeight ) */
+        
+        if (this.divContent.current.offsetHeight - window.scrollY + 16 === window.innerHeight) {
+            
+            this.props.addImg();
+            console.log('Scroll');                
+        }
+        
+        
+      }
 
     images=()=>{
         return this.props.images.images.map(element => {
-            return <img id="thumb" src={element.thumb} /> 
+            return <img id="flex" src={element.thumb}/> 
         })
     }
+    
     render(){
         return(
-            <div> 
+            <div id="id-content" ref={this.divContent}>
+                 
                 {this.images()}
+                
             </div>
     
         );
+
     
 
     }
@@ -27,4 +58,10 @@ class Content extends Component {
 
 export default Content;
 
+
+//window.onscroll = ()=> {
+  //  console.log('Estas scrolleando');
+  //};
+  //let screen = "";
+  //alert('el alto de la pantalla es '+ screen.availHeight);
 
