@@ -50,7 +50,7 @@ class Above extends Component {
           <span><i className="fas fa-search" id="search"></i></span>
         
         
-          <input  ref = {this.inputValue} type="text" placeholder="Buscar" onChange={this.setinput}/>
+          <input  ref = {this.inputValue} type="text" placeholder="Buscar" onChange={this.setinput} style={{width: window.innerWidth -623}}/>
           </div>
       
         

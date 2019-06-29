@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import Above from './Above.js';
 import Content from './Content.js';
 import {GetImgs} from './Unplash.js';
-import images from './Images.js';
+
 
 
 
@@ -12,14 +12,16 @@ class App extends Component {
     
     this.state = {
       images: [],
-      query: 'perros',
-      page: '1',
+      query: 'dog',
+      page: 1,
         }
        
   }
   //al iniciar o referescar muestra las 20 fotos
   componentDidMount= ()=>{
+    
     this.RefreshImgs();
+    
   }
   //para hacer scroll y que carge 20 fotos
   
@@ -27,8 +29,9 @@ class App extends Component {
   return (
     <div className="App">
       <Above Search = {this.Search} />
-      <Content images= {this.state}/>
-      <Images/>
+      
+      <Content images= {this.state} addImg={this.Scroll} />
+     
     </div>
   );
   }
@@ -36,7 +39,7 @@ class App extends Component {
   RefreshImgs =async ()=>{
     //para busquedas nuevas
     try{
-      if (this.state.page === '1'){
+      if (this.state.page === 1){
         GetImgs(this.state.query, this.state.page).then(
           newstate=>{
             this.setState(newstate);
@@ -44,14 +47,17 @@ class App extends Component {
       }
       //para scrolls.
       else {
-        this.setState(async (state, props)=>{
-          let Add = await GetImgs(state.query, state.page);
-          return {...state,
-          page: Add.page,
-          query: Add.query,   
-          images: state.images.concat(Add.images)}
+        GetImgs(this.state.query, this.state.page).then(addState =>{
+          this.setState((state, props)=>{
+            return {...state,
+            images: state.images.concat(addState.images)}
+          })
 
-      })}
+          
+        })
+
+
+        }
     }
     catch (error){
       console.log('Error',error);
@@ -60,9 +66,19 @@ class App extends Component {
   //función que se llama desde input (componente above)
   Search=(query)=>{
     this.setState((state, props)=>{
-      return {...state, query: query, page: '1'};
-    }); 
+      return {...state, query: query, page: 1};
+    });
+    window.scroll(0, 0);
     this.RefreshImgs();
+  }
+  Scroll = ()=>{
+    //numero de pagina
+    let newPage = this.state.page + 1;
+    this.setState((state, props)=>{
+      return {...state, page: newPage}
+    });
+    return this.RefreshImgs();
+    
   }
 }
 

@@ -7,9 +7,9 @@ const endPoint = 'https://api.unsplash.com/search/photos';
 export const GetImgs = async (query,page)=>{
         try{
             let response = await fetch(`${endPoint}?query=${query}&client_id=${accesKey}&per_page=20&page=${page}`);
-            console.log(response);
+            //console.log(response);
             let jsonResponse = await response.json();
-            console.log(jsonResponse);
+            //console.log(jsonResponse);
             let imagesList = await jsonResponse.results; 
             let output = {query: query, page: page, images: []};      
             await imagesList.map((element)=>{
@@ -20,7 +20,7 @@ export const GetImgs = async (query,page)=>{
                     thumb: element.urls.thumb
                 });            
             });
-            console.log(output);
+            //console.log(output);
             return output;
             }
             catch (error){
