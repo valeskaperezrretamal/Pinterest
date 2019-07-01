@@ -17,10 +17,12 @@ export const GetImgs = async (query,page)=>{
                     description: element.description,
                     id: element.id,
                     regular: element.urls.regular,
-                    thumb: element.urls.thumb
+                    thumb: element.urls.thumb,
+                    tag: element.tags[0].title,
+                    portafolio_url: element.user.portafolio_url
                 });            
             });
-            //console.log(output);
+            //console.log(output); 
             return output;
             }
             catch (error){
