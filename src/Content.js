@@ -1,7 +1,5 @@
 import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
-import StyleFlex from './styles/StyleFlex.css';
-import { watchFile } from 'fs';
+import Images from './Images';
 
 
 class Content extends Component {
@@ -23,9 +21,9 @@ class Content extends Component {
        /*  console.log("scrollY: "+window.scrollY);
         console.log("offsetHeight: "+ this.divContent.current.offsetHeight);
         console.log("innerHeight: "+ window.innerHeight); */
-        /* console.log(this.divContent.current.offsetHeight - window.scrollY - window.innerHeight ) */
+         /*console.log(this.divContent.current.offsetHeight - window.scrollY - window.innerHeight ) */
         
-        if (this.divContent.current.offsetHeight - window.scrollY + 16 === window.innerHeight) {
+        if (this.divContent.current.offsetHeight - window.scrollY + 90 === window.innerHeight) {
             
             this.props.addImg();
             console.log('Scroll');                
@@ -36,7 +34,7 @@ class Content extends Component {
 
     images=()=>{
         return this.props.images.images.map(element => {
-            return <img id="flex" src={element.thumb}/> 
+            return <Images thumb={element.thumb } tag={element.tag} portafolio_url={element.portafolio_url}/> 
         })
     }
     
@@ -45,6 +43,8 @@ class Content extends Component {
             <div id="id-content" ref={this.divContent}>
                  
                 {this.images()}
+                
+                
                 
             </div>
     

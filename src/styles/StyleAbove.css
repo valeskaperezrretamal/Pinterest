@@ -5,7 +5,7 @@ header{
     font-size: 16px;
     height: 56px;
     width: 100%;
-    position: relative;
+    position: absolute;
     line-height: normal;
     padding-left: 12px;
     padding-right: 12px;
@@ -14,6 +14,10 @@ header{
     box-sizing: border-box;
     margin-bottom: 24px;
     position: fixed;
+    z-index: 99;
+}
+#root{
+    
 }
 #logo-pin{
     padding-bottom: 10px;
@@ -61,6 +65,7 @@ input{
     left: 60px;
     top: -5px;
     
+    
 }
 
 
@@ -89,5 +94,5 @@ i{
     text-align: right;
  
     position: absolute;
-
+     
 }
