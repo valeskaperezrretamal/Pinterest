@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import ReactModal from 'react-modal';
 
 
 
@@ -6,16 +7,25 @@ class Images extends Component {
     constructor(props){
       super(props);
         this.state = {
-                    hover: false
+                    hover: false,
+                    showModal: false
                 } ;
         
         this.toggleHover=this.toggleHover.bind(this);
-        
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
     }
     
     toggleHover() {
-        this.setState({hover: !this.state.hover})
+        this.setState({ hover: !this.state.hover })
     }
+    handleOpenModal () {
+        this.setState({ showModal: true });
+      }
+      
+      handleCloseModal () {
+        this.setState({ showModal: false });
+      }
 
     render(){
         
@@ -60,7 +70,7 @@ class Images extends Component {
                 
             },
             iarrow: {
-                zIndex: '99',
+                zIndex: '89',
                 opacity: '0'
             },
             spansave: {
@@ -123,6 +133,9 @@ class Images extends Component {
                 bottom: '52px',
                 left: '168px',
                 
+            },
+            modal: {
+                zIndex: '99'
             }
             
             
@@ -137,14 +150,11 @@ class Images extends Component {
             style.spanportfolio_url.opacity= '1';
             style.iurlarrow.opacity= '1';
             style.ishare.opacity= '1';
-            
-
-          } else {
-            
           }
+          
         return(
             <div>
-                <div style={style.div} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                <div style={style.div} onClick={this.handleOpenModal} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
                     <img src={this.props.thumb} style={style.img}></img>
                     <span style={style.spantag}>{this.props.tag}</span>
                     <span style={style.spanarrow}><i style={style.iarrow} class="fas fa-angle-down"></i></span>
@@ -153,7 +163,12 @@ class Images extends Component {
                     <span style={style.spanportfolio_url}>{this.props.portfolio_url}</span>
                     <span style={style.spanurlarrow}><i style={style.iurlarrow} class="fas fa-arrow-up"></i></span>
                     <span style={style.spanshare}><i style={style.ishare} class="fas fa-arrow-alt-circle-up"></i></span>
+                    
                 </div>
+                <ReactModal style={style.modal} isOpen={this.state.showModal} contentLabel="Minimal Modal Example">
+                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                </ReactModal>
+
             </div>
 
         );
