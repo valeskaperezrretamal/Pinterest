@@ -14,7 +14,7 @@ header{
     box-sizing: border-box;
     margin-bottom: 24px;
     position: fixed;
-    z-index: 99;
+    z-index: 90;
 }
 #root{
     
