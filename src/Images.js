@@ -70,7 +70,7 @@ class Images extends Component {
                 
             },
             iarrow: {
-                zIndex: '89',
+                zIndex: '80',
                 opacity: '0'
             },
             spansave: {
@@ -135,7 +135,23 @@ class Images extends Component {
                 
             },
             modal: {
-                zIndex: '99'
+                zIndex: '98'
+            },
+            imgmodal: {
+                zIndex: '99',
+                top:'35px',
+                left: '0px',
+                borderRadius: '7px 7px 7px 7px',
+                margin: '10px',
+                marginBottom: '50px',
+                filter: 'brightness(1)',
+                width: '400px',
+                height: '500px'
+
+
+            },
+            close: {
+                right: '0%'
             }
             
             
@@ -151,6 +167,9 @@ class Images extends Component {
             style.iurlarrow.opacity= '1';
             style.ishare.opacity= '1';
           }
+        if (this.state.showModal){
+            
+        }
           
         return(
             <div>
@@ -166,7 +185,9 @@ class Images extends Component {
                     
                 </div>
                 <ReactModal style={style.modal} isOpen={this.state.showModal} contentLabel="Minimal Modal Example">
-                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                    <button onClick={this.handleCloseModal} style={style.close}>X</button>
+                    <img src={this.props.regular} style={style.imgmodal}></img>
+                    
                 </ReactModal>
 
             </div>
