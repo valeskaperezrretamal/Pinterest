@@ -134,13 +134,22 @@ class Images extends Component {
                 left: '168px',
                 
             },
+            divmodal: {
+                position: 'relative',
+                backgroundColor: '#F5F5F5',
+                marginTop:'5%',
+            },
             modal: {
-                zIndex: '98'
+                zIndex: '100',
+                position: 'relative',
+                backgroundColor: '#F5F5F5',
+                marginTop:'5%',
+                background: 'linear-gradient(rgb(238, 238, 238) 300px, rgb(255, 255, 255) 100%)'
             },
             imgmodal: {
-                zIndex: '99',
+                zIndex: '98',
                 top:'35px',
-                left: '0px',
+                left: '200px',
                 borderRadius: '7px 7px 7px 7px',
                 margin: '10px',
                 marginBottom: '50px',
@@ -151,7 +160,85 @@ class Images extends Component {
 
             },
             close: {
-                right: '0%'
+                position: 'absolute',
+                top: '35px',
+                right: '0',
+                border: '0',
+                backgroundColor: '#F5F5F5',
+                padding: '0.5rem 1rem',
+                borderRadius: '30%'
+
+            },
+            modalSave: {
+                position: 'absolute',
+                top: '30px',
+                left: '900px',
+                width: '70px',
+                height: '35px',
+                backgroundColor: 'rgb(202, 31, 31)',
+                borderRadius: '0px 6px 6px 0px',
+                color: 'white',
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+                fontSize: '16px',
+                fontWeight: '600',
+                
+            },
+            spantagmodal: {
+                top: '30px',
+                left: '783px',
+                float: 'right',
+                position: 'absolute',
+                width: '117px',
+                height: '35px',
+                backgroundColor: '#e2e2e2',
+                borderRadius: '6px 0px 0px 6px',
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+                fontSize: '16px',
+                fontWeight: '600',
+            },
+            spanarrowmodal:{
+                position: 'absolute',
+                top:'30px',
+                left: '860px',
+                float: 'right',
+                backgroundColor: '#e2e2e2',
+                borderRadius: '6px 6px 6px 6px',
+                
+            },
+            iarrowmodal:{
+                zIndex: '80'
+            },
+            submitmodal:{
+                top: '30px',
+                left: '710px',
+                float: 'right',
+                position: 'absolute',
+                width: '60px',
+                height: '35px',
+                backgroundColor: '#e2e2e2',
+                borderRadius: '0px 6px 6px 0px',
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+                fontSize: '16px',
+                fontWeight: '600',
+                
+            },
+            spansubmitmodal:{
+                position: 'absolute',
+                top:'30px',
+                left:'680px',
+                backgroundColor: '#e2e2e2',
+                borderRadius: '6px 0px 0px 6px',
+                width: '30px',
+                height: '35px'
+
+            },
+            fotomodal:{
+                position: 'absolute',
+                color: '#333',
+                fontSize: '21px',
+                fontWeight: '700',
+                top: '140px',
+                left: '680px'
             }
             
             
@@ -184,11 +271,19 @@ class Images extends Component {
                     <span style={style.spanshare}><i style={style.ishare} class="fas fa-arrow-alt-circle-up"></i></span>
                     
                 </div>
+                <div style={style.divmodal} onClick={this.handleCloseModal} >
                 <ReactModal style={style.modal} isOpen={this.state.showModal} contentLabel="Minimal Modal Example">
-                    <button onClick={this.handleCloseModal} style={style.close}>X</button>
+                    <span onClick={this.handleCloseModal} style={style.close}>X</span>
+                    <span onClick={this.handleCloseModal} style={style.modalSave}>Guardar</span>
+                    <span style={style.spantagmodal} onClick={this.handleCloseModal}>{this.props.tag}</span>
+                    <span style={style.spanarrowmodal} onClick={this.handleCloseModal}><i style={style.iarrowmodal} onClick={this.handleCloseModal} class="fas fa-angle-down"></i></span>
+                    <span style={style.submitmodal} onClick={this.handleCloseModal}>Enviar</span>
+                    <span style={style.spansubmitmodal} onClick={this.handleCloseModal}><i style={style.ispansubmitmodal} onClick={this.handleCloseModal} class="fas fa-upload"></i></span>
+                    <h1 style={style.fotomodal}>Fotos y Comentarios</h1>
                     <img src={this.props.regular} style={style.imgmodal}></img>
                     
                 </ReactModal>
+                </div>
 
             </div>
 
