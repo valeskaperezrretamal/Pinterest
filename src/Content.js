@@ -34,7 +34,7 @@ class Content extends Component {
 
     images=()=>{
         return this.props.images.images.map(element => {
-            return <Images thumb={element.thumb } tag={element.tag} portafolio_url={element.portafolio_url}/> 
+            return <Images thumb={element.thumb } tag={element.tag} portafolio_url={element.portafolio_url} regular={element.regular}/> 
         })
     }
     
